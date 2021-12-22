@@ -1,0 +1,3 @@
+include ':rlog'
+include ':app'
+rootProject.name = "RLog"
