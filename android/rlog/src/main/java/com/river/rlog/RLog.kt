@@ -1,11 +1,17 @@
 package com.river.rlog
 
+import java.util.*
+
 /**
  * @Author: River
  * @Emial: 1632958163@qq.com
  * @Create: 2021/11/9
  **/
 object RLog {
+    init {
+        assert(RLogConfig.identity != null) { "identity must be init!" }
+    }
+
     fun v(content: String) {
         log(RLogType.V, content)
     }
@@ -32,5 +38,15 @@ object RLog {
 
     fun log(@RLogType.TYPE level: Int, content: String) {
 
+        val logBean = LogBean(
+            content = content,
+            level = level,
+            threadName = Thread.currentThread().name,
+            time = Date().format()
+        )
+
+        for (printer in RLogConfig.printers) {
+            printer.printer(logBean)
+        }
     }
 }

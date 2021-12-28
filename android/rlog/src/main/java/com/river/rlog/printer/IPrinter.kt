@@ -1,5 +1,7 @@
 package com.river.rlog.printer
 
+import com.river.rlog.LogBean
+
 /**
  * @Author: River
  * @Emial: 1632958163@qq.com
@@ -8,13 +10,7 @@ package com.river.rlog.printer
 interface IPrinter {
     /**
      * 处理打印内容
-     * @param content String
+     * @param logBean LogBean
      */
-    fun printer(content: String)
-
-    /**
-     * 是否加密
-     * @return Boolean
-     */
-    fun enableEncrypt(): Boolean = false
+    fun printer(logBean: LogBean)
 }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cb0477a2-286f-4b34-aa27-333acae28025" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/android/app/src/main/java/com/yunlu/rlog/App.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/AppGlobals.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/DateExt.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/LogBean.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/encrypt/AESEncrypt.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/formatter/FileFormatter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/formatter/ILogFormatter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/printer/FilePrinter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/printer/TerminalPrinter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/LogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/UploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/entry/BaseResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/com/yunlu/rlog/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/com/yunlu/rlog/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/rlog/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/rlog/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/RLog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/RLog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/RLogConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/RLogConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/jsonParse/IJsonParse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/printer/IPrinter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/printer/IPrinter.kt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="22uN1oglJXBFlsbzF9M3jrYrHtP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/android" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb0477a2-286f-4b34-aa27-333acae28025" name="Default Changelist" comment="" />
+      <created>1640683299720</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640683299720</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="736" y="293" key="FileChooserDialogImpl" timestamp="1640683305807">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="736" y="293" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1640683305807" />
+  </component>
+</project>
