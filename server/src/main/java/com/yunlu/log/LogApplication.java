@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.yunlu.log.mapper")
+@MapperScan("com.yunlu.log.dao")
 public class LogApplication {
 
     public static void main(String[] args) {

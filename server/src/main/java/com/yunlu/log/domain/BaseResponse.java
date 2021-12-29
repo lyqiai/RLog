@@ -1,4 +1,4 @@
-package com.yunlu.log.entry;
+package com.yunlu.log.domain;
 
 import lombok.Data;
 

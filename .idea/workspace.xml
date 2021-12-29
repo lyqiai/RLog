@@ -2,27 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb0477a2-286f-4b34-aa27-333acae28025" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/android/app/src/main/java/com/yunlu/rlog/App.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/AppGlobals.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/DateExt.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/LogBean.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/encrypt/AESEncrypt.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/formatter/FileFormatter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/formatter/ILogFormatter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/printer/FilePrinter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/printer/TerminalPrinter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/LogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/UploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/entry/BaseResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/util/AESUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/LogMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/src/main/java/com/yunlu/rlog/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/com/yunlu/rlog/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/rlog/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/rlog/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/RLog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/RLog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/RLogConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/RLogConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/jsonParse/IJsonParse.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/printer/IPrinter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/printer/IPrinter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/LogApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/LogApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/LogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/entry/BaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/domain/BaseResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/entry/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/domain/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/mapper/ILogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/dao/LogDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/mapper/LogMapper" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +34,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/android" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\Project\RLog\server\src\main\java\com\yunlu\log" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -53,10 +54,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1640683299720</updated>
+      <workItem from="1640771986053" duration="33000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="806" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1640771998458">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="806" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1640771998458" />
     <state x="736" y="293" key="FileChooserDialogImpl" timestamp="1640683305807">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
