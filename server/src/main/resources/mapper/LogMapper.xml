@@ -1,8 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yunlu.log.dao.LogDao">
-    <insert id="addLog" parameterType="com.yunlu.log.domain.Log" useGeneratedKeys="true" keyProperty="id">
-        insert into t_log(thread_name, content)
-        values(#{threadName},#{content})
+    <insert id="addLogs" useGeneratedKeys="true" keyProperty="id">
+        insert into t_log(`identity`, `level`, thread_name, content, package_name, version_name, version_code, `time`)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.identity}, #{item.level}, #{item.threadName}, #{item.content}, #{item.packageName},
+            #{item.versionName}, #{item.versionCode}, #{item.time})
+        </foreach>
     </insert>
+
+    <select id="getAllPackage" resultType="java.lang.String">
+        select package_name from t_log group by package_name
+    </select>
+
+    <select id="getAllIdentity" resultType="java.lang.String">
+         select identity from t_log group by identity
+    </select>
+
+    <select id="getAllLevel" resultType="java.lang.String">
+        select `level` from t_log group by `level`
+    </select>
+
+    <select id="getLogs" resultType="com.yunlu.log.domain.Log">
+        select id, `identity`, `level`, thread_name, content, package_name, version_name, version_code, `time` from t_log
+        <where>
+            <if test="packageName != null and packageName != ''">
+                package_name = #{packageName}
+            </if>
+            <if test="identity != null and identity != ''">
+                and `identity` = #{identity}
+            </if>
+            <if test="level != null and level != ''">
+                and `level` = #{level}
+            </if>
+            <if test="time != null and time != ''">
+                and to_days(#{time}) = to_days(`time`)
+            </if>
+        </where>
+        limit #{position}, #{pageSize}
+    </select>
+
+    <select id="getLogsCount" resultType="java.lang.Integer">
+        select count(1) from t_log
+        <where>
+            <if test="packageName != null and packageName != ''">
+                package_name = #{packageName}
+            </if>
+            <if test="identity != null and identity != ''">
+                and `identity` = #{identity}
+            </if>
+            <if test="level != null and level != ''">
+                and `level` = #{level}
+            </if>
+            <if test="time != null and time != ''">
+                and to_days(#{time}) = to_days(`time`)
+            </if>
+        </where>
+    </select>
+
+
 </mapper>

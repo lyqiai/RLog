@@ -6,8 +6,12 @@ package com.river.rlog
  * @Create: 2021/11/9
  **/
 data class LogBean(
-    var content: String,
-    val level: Int,
-    val threadName: String,
-    val time: String,
+        val identity: String?,
+        val level: String,
+        var content: String,
+        val threadName: String,
+        val packageName: String,
+        val versionCode: Int,
+        val versionName: String,
+        val time: String,
 )

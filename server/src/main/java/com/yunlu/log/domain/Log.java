@@ -10,8 +10,12 @@ import lombok.Data;
 @Data
 public class Log {
     private Long id;
-    private Integer level;
+    private String identity;
+    private String level;
     private String threadName;
-    private String time;
     private String content;
+    private String packageName;
+    private String versionName;
+    private Integer versionCode;
+    private String time;
 }

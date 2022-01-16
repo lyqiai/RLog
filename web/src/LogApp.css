@@ -1,0 +1,16 @@
+.header {
+    padding: 8px;
+}
+
+.search-text {
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.search-select {
+    width: 200px;
+}
+
+.search {
+    margin-left: 8px;
+}

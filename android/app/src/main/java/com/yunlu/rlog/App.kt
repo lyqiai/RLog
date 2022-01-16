@@ -2,7 +2,6 @@ package com.yunlu.rlog
 
 import android.app.Application
 import com.river.rlog.RLogConfig
-import com.river.rlog.encrypt.AESEncrypt
 import com.river.rlog.identity.IIdentity
 import com.river.rlog.printer.FilePrinter
 import com.river.rlog.printer.TerminalPrinter
@@ -22,6 +21,7 @@ class App: Application() {
                     return "River"
                 }
             })
+            .setHost("http://192.168.2.5:8080")
             .setEncryptKey("1234567890123456".toByteArray())
             .setPrinters(TerminalPrinter(), FilePrinter())
     }

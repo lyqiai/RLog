@@ -21,6 +21,9 @@ public class BaseResponse<DATA> {
         this.data = data;
     }
 
+    public BaseResponse() {
+    }
+
     public static <DATA> BaseResponse<DATA> success(DATA data) {
         return new BaseResponse<>(SUCCESS_CODE, "ok", data);
     }

@@ -1,6 +1,5 @@
 package com.yunlu.log.util;
 
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +11,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 import java.util.Properties;
 
 /**
@@ -30,7 +30,7 @@ public class AESUtil {
             SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(), "AES");
             Cipher aes = Cipher.getInstance(AES_ALGORITHM_TYPE);
             aes.init(Cipher.DECRYPT_MODE, secretKeySpec);
-            byte[] base64 = Base64.decode(content);
+            byte[] base64 = Base64.getDecoder().decode(content.trim().replace("\n", ""));
             byte[] bytes = aes.doFinal(base64);
             return new String(bytes);
         } catch (NoSuchAlgorithmException e) {

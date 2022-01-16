@@ -3,6 +3,7 @@ package com.river.rlog.printer
 import android.util.Log
 import com.river.rlog.LogBean
 import com.river.rlog.RLogConfig
+import com.river.rlog.RLogType
 
 /**
  * @Author: River
@@ -23,9 +24,9 @@ class TerminalPrinter : IPrinter {
             if (index != len) {
                 log.append(logBean.content.substring(index, len))
             }
-            Log.println(logBean.level, RLogConfig.tag, log.toString())
+            Log.println(RLogType.getLevel(logBean.level), RLogConfig.tag, log.toString())
         } else {
-            Log.println(logBean.level, RLogConfig.tag, logBean.content)
+            Log.println(RLogType.getLevel(logBean.level), RLogConfig.tag, logBean.content)
         }
     }
 

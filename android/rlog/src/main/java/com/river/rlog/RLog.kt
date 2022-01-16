@@ -1,10 +1,7 @@
 package com.river.rlog
 
-import android.util.Log
-import okhttp3.*
-import java.io.File
+import android.content.pm.PackageManager
 import java.util.*
-import java.util.concurrent.Executors
 
 /**
  * @Author: River
@@ -12,7 +9,7 @@ import java.util.concurrent.Executors
  * @Create: 2021/11/9
  **/
 object RLog {
-    private val uploadExecutor = Executors.newSingleThreadExecutor()
+    private val logUpload = LogUpload()
 
     init {
         assert(RLogConfig.identity != null) { "identity must be init!" }
@@ -43,12 +40,16 @@ object RLog {
     }
 
     fun log(@RLogType.TYPE level: Int, content: String) {
-
+        val packageInfo = AppGlobals.get().packageManager.getPackageInfo(AppGlobals.get().packageName, PackageManager.GET_CONFIGURATIONS)
         val logBean = LogBean(
-            content = content,
-            level = level,
-            threadName = Thread.currentThread().name,
-            time = Date().format()
+                identity = RLogConfig.identity?.identity(),
+                content = content,
+                level = RLogType.getLevelString(level),
+                threadName = Thread.currentThread().name,
+                time = Date().format(),
+                packageName = AppGlobals.get().packageName,
+                versionCode = packageInfo.versionCode,
+                versionName = packageInfo.versionName
         )
 
         for (printer in RLogConfig.printers) {
@@ -57,26 +58,6 @@ object RLog {
     }
 
     fun uploadLog(passDay: Int) {
-        uploadExecutor.execute {
-            val filePath = AppGlobals.get().cacheDir!!.absolutePath + File.separator + "rlog" + File.separator + "20211229"
-            val file = File(filePath)
-            val okHttpClient = OkHttpClient()
-            val requestBody = MultipartBody.Builder()
-                .setType(MultipartBody.FORM)
-                .addFormDataPart(
-                    "file",
-                    file.name,
-                    RequestBody.create(MediaType.parse("multipart/form-data"), file)
-                )
-                .build()
-            val request = Request.Builder()
-                .header("Authorization", "Client-ID ${UUID.randomUUID()}")
-                .url("http://10.66.21.92:8080/upload/file")
-                .post(requestBody)
-                .build()
-
-            val execute = okHttpClient.newCall(request).execute()
-            println(execute.body().toString())
-        }
+        logUpload.upload(passDay)
     }
 }

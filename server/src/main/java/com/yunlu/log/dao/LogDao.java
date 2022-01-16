@@ -2,6 +2,9 @@ package com.yunlu.log.dao;
 
 import com.yunlu.log.domain.Log;
 
+import java.util.List;
+import java.util.Map;
+
 
 /**
  * @Author: River
@@ -9,5 +12,15 @@ import com.yunlu.log.domain.Log;
  * @Create: 2021/12/28
  **/
 public interface LogDao {
-    int addLog(Log log);
+    boolean addLogs(List<Log> logs);
+
+    List<String> getAllPackage();
+
+    List<String> getAllIdentity();
+
+    List<String> getAllLevel();
+
+    List<Log> getLogs(Map<String, Object> map);
+
+    int getLogsCount(Map<String, Object> map);
 }

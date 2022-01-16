@@ -21,4 +21,36 @@ object RLogType {
     @IntDef(V, D, I, W, E, A)
     @Retention(RetentionPolicy.SOURCE)
     annotation class TYPE
+
+    fun getLevelString(@TYPE level: Int): String {
+        return when (level) {
+            V -> VERBOSE
+            D -> DEBUG
+            I -> INFO
+            W -> WARN
+            E -> ERROR
+            A -> ASSERT
+            else -> UNKNOWN
+        }
+    }
+
+    fun getLevel(level: String): Int {
+        return when (level) {
+            VERBOSE -> V
+            DEBUG -> D
+            INFO -> I
+            WARN -> W
+            ERROR -> E
+            ASSERT -> A
+            else -> I
+        }
+    }
+
+    const val VERBOSE = "VERBOSE"
+    const val DEBUG = "DEBUG"
+    const val INFO = "INFO"
+    const val WARN = "WARN"
+    const val ERROR = "ERROR"
+    const val ASSERT = "ASSERT"
+    const val UNKNOWN = "UNKNOWN"
 }

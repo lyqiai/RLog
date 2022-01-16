@@ -1,14 +1,17 @@
 package com.yunlu.log.controller;
 
-import com.yunlu.log.domain.BaseResponse;
-import com.yunlu.log.domain.Log;
 import com.yunlu.log.dao.LogDao;
-import com.yunlu.log.util.AESUtil;
+import com.yunlu.log.domain.BaseResponse;
+import com.yunlu.log.domain.GetLogsQuery;
+import com.yunlu.log.domain.Log;
+import com.yunlu.log.domain.PagerData;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * @Author: River
@@ -17,25 +20,46 @@ import java.util.Date;
  **/
 @RestController()
 @RequestMapping("/log")
+@Slf4j
 public class LogController {
     @Autowired
-    public LogDao logDao;
+    private LogDao logDao;
 
-    @RequestMapping("/add")
-    public BaseResponse addLog() {
-        Log log = new Log();
-        log.setLevel(0);
-        log.setThreadName("main");
-        log.setContent("content");
-        log.setTime(new Date().toString());
-
-        Integer id = logDao.addLog(log);
-        return BaseResponse.success(id);
+    @RequestMapping("/getAllPackages")
+    public BaseResponse<List<String>> getAllPackages() {
+        List<String> allPackage = logDao.getAllPackage();
+        return BaseResponse.success(allPackage);
     }
 
-    @RequestMapping("/test")
-    public String test() {
-        String content = "MZ2d57Z0rrwsBcdouPfHbq4238PkhN1YW2cMdW1MAfUfeM0uEd4g83UfxRbuQDWUCwUDIpQA2rRe3ZQwGb0ET9jJVuqQICbffI+czH2145X7E5hNauHq4GVNMdBFdnUpDPocVBcOpwBXwsE0xF6E0A==";
-        return AESUtil.decrypt(content);
+    @RequestMapping("/getAllIdentity")
+    public BaseResponse<List<String>> getAllIdentity() {
+        List<String> allIdentity = logDao.getAllIdentity();
+        return BaseResponse.success(allIdentity);
+    }
+
+    @RequestMapping("/getAllLevel")
+    public BaseResponse<List<String>> getAllLevel() {
+        List<String> allLevel = logDao.getAllLevel();
+        return BaseResponse.success(allLevel);
+    }
+
+    @RequestMapping("/getLogs")
+    public BaseResponse<PagerData<Log>> getLogs(GetLogsQuery query) {
+        HashMap<String, Object> data = new HashMap<>();
+        data.put("packageName", query.getPackageName());
+        data.put("identity", query.getIdentity());
+        data.put("level", query.getLevel());
+        data.put("position", query.getPage() * query.getPageSize());
+        data.put("pageSize", query.getPageSize());
+        log.info(data.toString());
+
+        List<Log> logs = logDao.getLogs(data);
+        int total = logDao.getLogsCount(data);
+
+        PagerData<Log> pagerData = new PagerData<>();
+        pagerData.setData(logs);
+        pagerData.setTotal(total);
+
+        return BaseResponse.success(pagerData);
     }
 }

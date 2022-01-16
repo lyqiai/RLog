@@ -17,15 +17,16 @@ class AESEncrypt(private val key: ByteArray) : IEncrypt {
         val aes: Cipher = Cipher.getInstance(AES_ALGORITHM_TYPE)
         aes.init(Cipher.ENCRYPT_MODE, secretKeySpec)
         val bytes: ByteArray = aes.doFinal(content.toByteArray(charset("utf-8")))
-        return Base64.encodeToString(bytes, Base64.DEFAULT)
+        val encode = Base64.encode(bytes, Base64.NO_WRAP)
+        return String(encode, charset("utf-8"))
     }
 
     override fun decrypt(content: String): String {
         val secretKeySpec = SecretKeySpec(key, "AES")
         val aes: Cipher = Cipher.getInstance(AES_ALGORITHM_TYPE)
         aes.init(Cipher.DECRYPT_MODE, secretKeySpec)
-        val base64 = Base64.decode(content, Base64.DEFAULT)
-        val bytes: ByteArray = aes.doFinal(base64)
-        return String(bytes, charset("utf-8"))
+        val base64 = Base64.decode(content, Base64.NO_WRAP)
+        val decode = aes.doFinal(base64)
+        return String(decode, charset("utf-8"))
     }
 }
