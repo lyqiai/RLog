@@ -1,6 +1,6 @@
 import './LogApp.css';
 import 'antd/dist/antd.css'
-import {Component} from 'react'
+import React, {Component} from 'react'
 import {Select, DatePicker, Button, Table} from "antd";
 import {SearchOutlined} from '@ant-design/icons';
 import axios from "axios";
@@ -8,7 +8,7 @@ import moment from 'moment';
 
 const {Option} = Select;
 
-const baseURL = "http://127.0.0.1:8080/";
+const baseURL = "http://api.pronote.top/";
 
 const tableColumn = [
     {title: 'identity', dataIndex: 'identity', key: 'identity'},
