@@ -1,0 +1,47 @@
+version: "3.3"
+
+networks:
+  frontend:
+  backend:
+
+services:
+  javaserver:
+    container_name: javaserver
+    build:
+      context: .
+      dockerfile: Dockerfile_debug
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - backend
+    command: java -Djava.security.egd=file:/dev/./urandom -jar /logserver/target/log-0.0.1-SNAPSHOT.jar
+
+  db:
+    image: mysql:5.7
+    container_name: db
+    volumes:
+      - ./mysql/my.conf:/etc/mysql/my.conf:ro
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/source:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: "coolboy@88"
+      MYSQL_DATABASE: "rlog"
+    ports:
+      - "13306:3306"
+    networks:
+      - backend
+
+  nginx:
+    image: nginx:1.12
+    container_name: nginx
+    networks:
+      - frontend
+      - backend
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - javaserver
+    ports:
+    - "80:80"
