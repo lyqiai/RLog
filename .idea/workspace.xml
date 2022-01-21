@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb0477a2-286f-4b34-aa27-333acae28025" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/util/AESUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/LogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/com/yunlu/rlog/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/com/yunlu/rlog/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/rlog/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/rlog/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/RLog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/rlog/src/main/java/com/river/rlog/RLog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/LogApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/LogApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/LogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/entry/BaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/domain/BaseResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/entry/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/domain/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/mapper/ILogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/dao/LogDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/mapper/LogMapper" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx/default.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/Dockerfile_debug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mysql/my.conf" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/my.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mysql/source/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/source/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/nginx/default.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +23,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="22uN1oglJXBFlsbzF9M3jrYrHtP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,11 +37,30 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\Project\RLog" />
       <recent name="I:\Project\RLog\server\src\main\java\com\yunlu\log" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="eject" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="eject" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.eject" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -55,6 +73,8 @@
       <option name="presentableId" value="Default" />
       <updated>1640683299720</updated>
       <workItem from="1640771986053" duration="33000" />
+      <workItem from="1642675467500" duration="141000" />
+      <workItem from="1642728280648" duration="5364000" />
     </task>
     <servers />
   </component>
@@ -62,6 +82,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1642728292631">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1642728292631" />
     <state x="806" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1640771998458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -70,5 +94,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="736" y="293" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1640683305807" />
+    <state x="636" y="253" width="647" height="534" key="find.popup" timestamp="1642731576669">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="636" y="253" width="647" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1642731576669" />
   </component>
 </project>
