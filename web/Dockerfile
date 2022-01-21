@@ -1,5 +1,4 @@
-FROM node:latest
+FROM node:16.13.2-alpine
 COPY . /logweb
-ARG REACT_APP_BASE_URL
-ENV REACT_APP_BASE_URL=$REACT_APP_BASE_URL
-RUN cd /logweb && npm install
+WORKDIR /logweb
+RUN npm install && npm run build

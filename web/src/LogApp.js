@@ -8,7 +8,7 @@ import moment from 'moment';
 
 const {Option} = Select;
 
-const baseURL = "http://api.pronote.top/";
+const baseURL = "http://log.localhost/";
 
 const tableColumn = [
     {title: 'identity', dataIndex: 'identity', key: 'identity'},

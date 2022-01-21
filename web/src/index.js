@@ -10,5 +10,3 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-console.log(process.env.REACT_APP_BASE_URL);
-
