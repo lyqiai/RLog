@@ -4,6 +4,9 @@ networks:
   frontend:
   backend:
 
+volumes:
+  web-volume:
+
 services:
   javaserver:
     container_name: javaserver
@@ -40,7 +43,8 @@ services:
       dockerfile: Dockerfile
       args:
         REACT_APP_HOST_IP_ADDRESS: "http://api.localhost/"
-    command: npm run build
+    volumes:
+      - web-volume:build
 
   nginx:
     image: nginx:1.12
@@ -50,7 +54,7 @@ services:
       - backend
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./web/build:/etc/rlogweb
+      - web-volume:/etc/rlogweb
     depends_on:
       - javaserver
       - web
