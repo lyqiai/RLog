@@ -8,7 +8,7 @@ import moment from 'moment';
 
 const {Option} = Select;
 
-const baseURL = "http://log.localhost/";
+const baseURL = "http://api.localhost/";
 
 const tableColumn = [
     {title: 'identity', dataIndex: 'identity', key: 'identity'},
@@ -20,6 +20,7 @@ const tableColumn = [
     {title: 'versionCode', dataIndex: 'versionCode', key: 'versionCode'},
     {title: 'time', dataIndex: 'time', key: 'time'},
 ];
+
 const pageSize = 20;
 
 class LogApp extends Component {
@@ -41,14 +42,14 @@ class LogApp extends Component {
     }
 
     componentDidMount() {
-        this.queryPackages()
-        this.queryIdentity()
-        this.queryLevel()
-        this.queryLogs()
+        this.queryPackages();
+        this.queryIdentity();
+        this.queryLevel();
+        this.queryLogs();
     }
 
     async queryPackages() {
-        const response = await axios.get(`${baseURL}log/getAllPackages`)
+        const response = await axios.get(`${baseURL}log/getAllPackages`);
         if (response.status === 200 && response.data.code === 0) {
             this.setState({
                 packages: response.data.data
@@ -57,7 +58,7 @@ class LogApp extends Component {
     }
 
     async queryIdentity() {
-        const response = await axios.get(`${baseURL}log/getAllIdentity`)
+        const response = await axios.get(`${baseURL}log/getAllIdentity`);
         if (response.status === 200 && response.data.code === 0) {
             this.setState({
                 identities: response.data.data
@@ -73,7 +74,7 @@ class LogApp extends Component {
         this.setState({
             loading: true
         });
-        const response = await axios.get(`${baseURL}log/getAllLevel`)
+        const response = await axios.get(`${baseURL}log/getAllLevel`);
         if (response.status === 200 && response.data.code === 0) {
             this.setState({
                 levels: response.data.data
@@ -107,7 +108,7 @@ class LogApp extends Component {
         this.setState({
             page: page
         }, () => {
-            this.queryLogs()
+            this.queryLogs();
         });
     }
 

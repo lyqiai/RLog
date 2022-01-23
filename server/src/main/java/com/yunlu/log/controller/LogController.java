@@ -62,4 +62,10 @@ public class LogController {
 
         return BaseResponse.success(pagerData);
     }
+
+
+    @RequestMapping("/test")
+    public String hello() {
+        return "hello";
+    }
 }

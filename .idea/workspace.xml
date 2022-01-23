@@ -2,16 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb0477a2-286f-4b34-aa27-333acae28025" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/develop-restart.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/develop.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose-develop.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx/develop.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prod.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Dockerfile-develop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/yunlu/log/controller/LogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/web/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/robots.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/LogApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/LogApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,14 +45,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server" />
+    <property name="nodejs.protractor.protractor_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -55,13 +66,29 @@
       <recent name="I:\Project\RLog\server\src\main\java\com\yunlu\log" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
-    <configuration name="docker-compose.yml.web: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+  <component name="RunManager" selected="Docker.docker-compose.yml.javaserver: Compose Deployment">
+    <configuration name="docker-compose.yml.javaserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
+              <option value="javaserver" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.web: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="javaserver" />
+              <option value="db" />
               <option value="web" />
+              <option value="nginx" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
@@ -89,12 +116,30 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose.yml.web: Compose Deployment" />
+      <item itemvalue="npm.eject" />
+      <item itemvalue="npm.start" />
+      <item itemvalue="Docker.docker-compose.yml.javaserver: Compose Deployment" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml.javaserver: Compose Deployment" />
         <item itemvalue="npm.start" />
-        <item itemvalue="Docker.docker-compose.yml.web: Compose Deployment" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -112,6 +157,7 @@
       <workItem from="1642755060893" duration="4149000" />
       <workItem from="1642759349723" duration="353000" />
       <workItem from="1642759938757" duration="1386000" />
+      <workItem from="1642912546496" duration="16337000" />
     </task>
     <servers />
   </component>
@@ -119,14 +165,24 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1642736580402">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="689" y="239" key="#Docker" timestamp="1642913876640">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="689" y="239" key="#Docker/0.0.2560.1400@0.0.2560.1400" timestamp="1642913876640" />
+    <state x="897" y="229" width="1089" height="906" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1642915805304">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1642736580402" />
-    <state x="712" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1642736792205">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="897" y="229" width="1089" height="906" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1642915805304" />
+    <state x="949" y="433" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1642924176963">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="712" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1642736792205" />
+    <state x="949" y="433" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1642924176963" />
+    <state x="1172" y="357" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1642915804090">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1172" y="357" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1642915804090" />
     <state x="806" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1640771998458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -135,10 +191,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="668" y="241" key="#docker-compose.yml.web:_Compose_Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1642744784535" />
-    <state x="736" y="293" key="FileChooserDialogImpl" timestamp="1642756990704">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="936" y="470" key="DockerComposeFileDialog" timestamp="1642913895748">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="936" y="470" key="DockerComposeFileDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1642913895748" />
+    <state x="1177" y="335" key="EnvironmentVariablesDialog" timestamp="1642913863224">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1177" y="335" key="EnvironmentVariablesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1642913863224" />
+    <state x="981" y="394" key="FileChooserDialogImpl" timestamp="1642915717879">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="736" y="293" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1642756990704" />
+    <state x="981" y="394" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1642915717879" />
     <state width="1877" height="321" key="GridCell.Tab.0.bottom" timestamp="1642759732083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -203,9 +268,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1642759256464" />
-    <state x="636" y="253" width="647" height="534" key="find.popup" timestamp="1642731576669">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="782" y="343" key="SettingsEditor" timestamp="1642928583998">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="782" y="343" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1642928583998" />
+    <state x="848" y="341" width="863" height="719" key="find.popup" timestamp="1642923532117">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="636" y="253" width="647" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1642731576669" />
+    <state x="848" y="341" width="863" height="719" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1642923532117" />
   </component>
 </project>
