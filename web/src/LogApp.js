@@ -86,6 +86,7 @@ class LogApp extends Component {
     }
 
     async queryLogs() {
+        const time = this.state.time?.format("yyyy-MM-DD");
         const response = await axios.get(`${baseURL}log/getLogs`, {
             params: {
                 packageName: this.state.packageName,
@@ -93,7 +94,7 @@ class LogApp extends Component {
                 level: this.state.level,
                 page: this.state.page - 1,
                 pageSize: pageSize,
-                time: this.state.time?.format("yyyy-MM-dd hh:mm:ss")
+                time: time,
             }
         });
         if (response.status === 200 && response.data.code === 0) {

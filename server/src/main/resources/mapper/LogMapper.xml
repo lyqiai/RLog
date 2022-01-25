@@ -38,6 +38,7 @@
                 and to_days(#{time}) = to_days(`time`)
             </if>
         </where>
+        order by time desc
         limit #{position}, #{pageSize}
     </select>
 

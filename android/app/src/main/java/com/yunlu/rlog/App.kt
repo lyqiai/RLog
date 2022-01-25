@@ -1,6 +1,7 @@
 package com.yunlu.rlog
 
 import android.app.Application
+import com.river.rlog.RLog
 import com.river.rlog.RLogConfig
 import com.river.rlog.identity.IIdentity
 import com.river.rlog.printer.FilePrinter
@@ -11,18 +12,20 @@ import com.river.rlog.printer.TerminalPrinter
  * @Emial: 1632958163@qq.com
  * @Create: 2021/11/9
  **/
-class App: Application() {
+class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
         RLogConfig
-            .setIdentity(object: IIdentity{
+            .setIdentity(object : IIdentity {
                 override fun identity(): String {
                     return "River"
                 }
             })
-            .setHost("http://api.pronote.top")
+            .setHost("http://api.10.66.21.92")
             .setEncryptKey("1234567890123456".toByteArray())
             .setPrinters(TerminalPrinter(), FilePrinter())
+
+        RLog.autoUpload()
     }
 }

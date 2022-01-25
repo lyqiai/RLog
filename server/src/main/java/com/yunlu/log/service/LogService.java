@@ -54,8 +54,12 @@ public class LogService implements ILogService {
                     }
                 }
             }
+            boolean succ = false;
 
-            boolean succ = logDao.addLogs(logs);
+            if (!logs.isEmpty()) {
+                succ = logDao.addLogs(logs);
+            }
+
             response.setCode(succ ? BaseResponse.SUCCESS_CODE : -1);
             response.setMessage(succ ? "OK" : "数据插入失败");
         } catch (IOException e) {

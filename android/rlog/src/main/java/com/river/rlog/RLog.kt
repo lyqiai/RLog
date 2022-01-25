@@ -1,6 +1,8 @@
 package com.river.rlog
 
 import android.content.pm.PackageManager
+import com.river.rlog.upload.ILogUpload
+import com.river.rlog.upload.UploadWorker
 import java.util.*
 
 /**
@@ -8,9 +10,7 @@ import java.util.*
  * @Emial: 1632958163@qq.com
  * @Create: 2021/11/9
  **/
-object RLog {
-    private val logUpload = LogUpload()
-
+object RLog: ILogUpload {
     init {
         assert(RLogConfig.identity != null) { "identity must be init!" }
     }
@@ -57,7 +57,23 @@ object RLog {
         }
     }
 
-    fun uploadLog(passDay: Int) {
-        logUpload.upload(passDay)
+    override fun upload() {
+        for (printer in RLogConfig.printers) {
+            if (printer is ILogUpload) {
+                printer.upload()
+            }
+        }
+    }
+
+    override fun upload(passDay: Int) {
+        for (printer in RLogConfig.printers) {
+            if (printer is ILogUpload) {
+                printer.upload(passDay)
+            }
+        }
+    }
+
+    fun autoUpload() {
+        UploadWorker.startWork()
     }
 }

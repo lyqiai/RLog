@@ -11,11 +11,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViewById<MaterialButton>(R.id.action_log).setOnClickListener {
-            RLog.d("订单信息：100801642299，订单状态：成功")
+            RLog.d("自动上传日志内容测试")
         }
 
         findViewById<MaterialButton>(R.id.action_upload).setOnClickListener {
-            RLog.uploadLog(1)
+            RLog.upload()
         }
     }
 }

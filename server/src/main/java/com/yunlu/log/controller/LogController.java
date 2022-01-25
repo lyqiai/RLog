@@ -51,7 +51,7 @@ public class LogController {
         data.put("level", query.getLevel());
         data.put("position", query.getPage() * query.getPageSize());
         data.put("pageSize", query.getPageSize());
-        log.info(data.toString());
+        data.put("time", query.getTime());
 
         List<Log> logs = logDao.getLogs(data);
         int total = logDao.getLogsCount(data);
@@ -64,7 +64,7 @@ public class LogController {
     }
 
 
-    @RequestMapping("/test")
+    @RequestMapping("/hello")
     public String hello() {
         return "hello";
     }
