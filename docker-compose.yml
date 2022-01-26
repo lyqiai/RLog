@@ -1,26 +1,6 @@
 version: "3.3"
 
-networks:
-  frontend:
-  backend:
-
-volumes:
-  web-volume:
-
 services:
-  javaserver:
-    container_name: javaserver
-    build:
-      context: ./server
-      dockerfile: Dockerfile-prod
-    ports:
-      - "8080:8080"
-    depends_on:
-      - db
-    networks:
-      - backend
-    command: java -Djava.security.egd=file:/dev/./urandom -jar /logserver/target/log-0.0.1-SNAPSHOT.jar
-
   db:
     image: mysql:5.7
     container_name: db
@@ -33,27 +13,3 @@ services:
       MYSQL_DATABASE: "rlog"
     ports:
       - "13306:3306"
-    networks:
-      - backend
-
-  webclient:
-    container_name: webclient
-    build:
-      context: ./web
-      dockerfile: Dockerfile
-    volumes:
-      - web-volume:/logweb
-
-  nginx:
-    image: nginx:1.12
-    container_name: nginx
-    networks:
-      - frontend
-      - backend
-    volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - web-volume:/etc/rlogweb
-    depends_on:
-      - javaserver
-    ports:
-      - "80:80"

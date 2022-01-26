@@ -67,7 +67,7 @@ class LogUpload : ILogUpload {
                 .build()
             val request = Request.Builder()
                 .header("Authorization", "Client-ID ${UUID.randomUUID()}")
-                .url(String.format("%s/upload/file", RLogConfig.host))
+                .url(String.format("%s/log/upload", RLogConfig.host))
                 .post(requestBody)
                 .build()
             try {

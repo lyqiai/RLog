@@ -14,6 +14,8 @@ import java.util.concurrent.TimeUnit
  **/
 class UploadWorker(appContext: Context, workerParams: WorkerParameters): Worker(appContext, workerParams) {
     override fun doWork(): Result {
+        RLog.i("自动上传任务开始...")
+
         RLog.upload()
 
         return Result.success()
@@ -25,12 +27,12 @@ class UploadWorker(appContext: Context, workerParams: WorkerParameters): Worker(
         fun startWork() {
             val constraints = Constraints.Builder()
                 .setRequiredNetworkType(NetworkType.CONNECTED)
-                .setRequiresBatteryNotLow(true)
-                .setRequiresStorageNotLow(true)
-
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-                constraints.setRequiresDeviceIdle(true)
-            }
+//                .setRequiresBatteryNotLow(true)
+//                .setRequiresStorageNotLow(true)
+//
+//            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+//                constraints.setRequiresDeviceIdle(true)
+//            }
 
             val worker = PeriodicWorkRequestBuilder<UploadWorker>(15, TimeUnit.MINUTES)
                 .setConstraints(constraints.build())

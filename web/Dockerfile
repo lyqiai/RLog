@@ -1,3 +1,9 @@
 FROM node:16.13.2-alpine
-COPY ./build /logweb
-WORKDIR /logweb
+
+COPY . /logweb
+
+RUN npm install -g http-server \
+    && cd /logweb \
+    && npm run build
+
+WORKDIR /logweb/build

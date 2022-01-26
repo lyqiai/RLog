@@ -8,7 +8,7 @@ import moment from 'moment';
 
 const {Option} = Select;
 
-const baseURL = "http://api.localhost/";
+const baseURL = process.env.REACT_APP_API_URL;
 
 const tableColumn = [
     {title: 'identity', dataIndex: 'identity', key: 'identity'},

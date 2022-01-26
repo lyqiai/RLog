@@ -5,10 +5,13 @@ import com.yunlu.log.domain.BaseResponse;
 import com.yunlu.log.domain.GetLogsQuery;
 import com.yunlu.log.domain.Log;
 import com.yunlu.log.domain.PagerData;
+import com.yunlu.log.service.LogService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,6 +25,9 @@ import java.util.List;
 @RequestMapping("/log")
 @Slf4j
 public class LogController {
+    @Autowired
+    private LogService logService;
+
     @Autowired
     private LogDao logDao;
 
@@ -64,8 +70,8 @@ public class LogController {
     }
 
 
-    @RequestMapping("/hello")
-    public String hello() {
-        return "hello";
+    @RequestMapping("/upload")
+    public BaseResponse upload(@RequestParam("file") MultipartFile file) {
+        return logService.uploadFile2DB(file);
     }
 }

@@ -22,7 +22,7 @@ class App : Application() {
                     return "River"
                 }
             })
-            .setHost("http://api.10.66.21.92")
+            .setHost("http://10.66.21.92:8080")
             .setEncryptKey("1234567890123456".toByteArray())
             .setPrinters(TerminalPrinter(), FilePrinter())
 
